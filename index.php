@@ -124,7 +124,7 @@
 
     <div class="project-grid">
       <article class="project-card">
-        <h3>Tree Canopy Dashboard</h3>
+          <h3>Tree Canopy Dashboard</h3>
         <figure>
           <img class="project-image" src="/img/port-trees.png" alt="Seattle Tree Canopy Dashboard Screenshot">
         </figure>
