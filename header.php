@@ -1,12 +1,17 @@
 <?php
+  $pageTitle = $pageTitle ?? 'Matthew Valdez – Portfolio';
+  $pageDescription = $pageDescription ?? 'Data, supply chain, and analytics portfolio';
 // header.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Matthew Valdez</title>
+  <title>
+    <?= htmlspecialchars($pageTitle) ?>
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
 
   <!-- font stuff -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
