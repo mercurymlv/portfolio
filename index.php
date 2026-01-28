@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+
+
+<?php include 'header.php';?>
+
+
+
 <div class="page-surface">
   <section id="home" class="section hero">
       <div class="hero-text">
@@ -148,7 +153,7 @@
         </p>
         <div class="project-links">
           <a href="/projects/trivia-game.html">Case Study</a>
-          <a href="https://mlv888.pythonanywhere.com/">Play Game <i class="bi bi-box-arrow-up-right"></i></a>
+          <a href="https://mlv888.pythonanywhere.com/" target="_blank">Play Game <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </article>
 
@@ -162,7 +167,7 @@
         </p>
         <div class="project-links">
           <a href="/projects/stock-screener.html">Case Study</a>
-          <a href="https://www.matthewvaldez.com/stocks/">Open <i class="bi bi-box-arrow-up-right"></i></a>
+          <a href="https://www.matthewvaldez.com/stocks/" target="_blank">Open <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </article>
 
@@ -205,12 +210,17 @@
 </p>
 
 <script>
+console.log('Script loaded!');
+
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    console.log('Form submitted!');
     e.preventDefault();
     
     const btn = document.getElementById('submit-btn');
     const msgDiv = document.getElementById('form-message');
     const form = e.target;
+    
+    console.log('Button and form elements found');
     
     // Disable button
     btn.disabled = true;
@@ -218,14 +228,21 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     
     // Prepare form data
     const formData = new FormData(form);
+    console.log('FormData prepared');
     
     try {
+        console.log('About to fetch contact-handler.php...');
+        
         const response = await fetch('contact-handler.php', {
             method: 'POST',
             body: formData
         });
         
+        console.log('Response received:', response);
+        console.log('Response status:', response.status);
+        
         const result = await response.json();
+        console.log('JSON parsed:', result);
         
         if (result.success) {
             msgDiv.className = 'message success';
@@ -242,6 +259,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         msgDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
     } catch (error) {
+        console.log('Caught error:', error);
         msgDiv.className = 'message error';
         msgDiv.textContent = 'Sorry, there was an error. Please try again.';
         msgDiv.style.display = 'block';

@@ -1,0 +1,3 @@
+RemoveHandler .html .htm
+AddType text/html .html .htm
+DirectoryIndex index.html index.htm index.php

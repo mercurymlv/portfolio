@@ -389,16 +389,14 @@ main {
     padding: 2rem 1rem;
     background: #F9F2D9;
     background-image: url("/img/about.jpg");
-    background-size: fill;
-    background-position: 75% center;
+    background-size: cover;  /* Changed from 'fill' to 'cover' */
+    background-position: 75% 40%;
     opacity: 0.8;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border:#F4E1B1, 2px solid;
+    border: 2px solid #F4E1B1;  /* Also fixed your border syntax */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    
 }
-
 
 .contact-container {
     max-width: 600px;
