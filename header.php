@@ -30,6 +30,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/fav/favicon-16x16.png">
   <link rel="manifest" href="/img/fav/site.webmanifest">
 
+<!-- for recaptcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=6Le4aVosAAAAAMZ5NUA-sprcJgi15d4YC7FK6Qwh"></script>
 
 </head>
 <body>
