@@ -215,8 +215,11 @@
           <button type="submit" id="submit-btn">Send Message</button>
         </div>
       </form>
-      <!-- Message that is displayed after form submission -->
-      <div id="form-message" class="message" style="display: none;"></div>
+      <!-- Message that is displayed after form submission - with close button-->
+      <div id="form-message" class="message" style="display: none;">
+        <span class="message-text"></span>
+        <button class="message-close" onclick="this.parentElement.style.display='none'"><i class="bi bi-x-circle"></i></button>
+      </div>
     </div>
   </section>
 </div>
@@ -251,11 +254,11 @@
           
           if (result.success) {
               msgDiv.className = 'message success';
-              msgDiv.textContent = 'Thank you! Your message has been sent successfully.';
+              msgDiv.querySelector('.message-text').textContent = 'Thank you! Your message has been sent successfully.';
               form.reset();
           } else {
               msgDiv.className = 'message error';
-              msgDiv.textContent = result.message || 'Sorry, there was an error. Please try again.';
+              msgDiv.querySelector('.message-text').textContent = result.message || 'Sorry, there was an error. Please try again.';
           }
           
           msgDiv.style.display = 'block';
@@ -265,7 +268,7 @@
           
       } catch (error) {
           msgDiv.className = 'message error';
-          msgDiv.textContent = 'Sorry, there was an error. Please try again.';
+          msgDiv.querySelector('.message-text').textContent = 'Sorry, there was an error. Please try again.';
           msgDiv.style.display = 'block';
       }
       

@@ -16,14 +16,11 @@ tmp/
 temp/
 *.tmp
 
-<<<<<<< Updated upstream
 # Color palettes
 Pantone Connect Palette-extended.png
 
 # Re-usable case study template with sidebar
 template.php
-=======
 # Misc
 .dh_diag
 .htaccess
->>>>>>> Stashed changes
