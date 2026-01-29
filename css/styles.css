@@ -19,7 +19,7 @@ body {
 }
 
 
-/* ---- Sticky nav ---- */
+/* ---- Header and Sticky nav ---- */
 .site-header {
   position: sticky;
   top: 1.25rem;
@@ -27,7 +27,7 @@ body {
 
   /* glassy, lighter */
   background: rgba(255, 255, 255, 0.75);
-  opacity: 0.75;
+  opacity: 0.8;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -56,7 +56,6 @@ body {
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-
   position: relative;
 }
 
@@ -66,8 +65,7 @@ body {
   left: 50%;
   bottom: -6px;
   width: 0;
-  height: 1px;
-  /* background: currentColor; */
+  height: 1px; 
   background: #b93a32;
   transition: width 0.2s ease, left 0.2s ease;
 }
@@ -77,6 +75,7 @@ body {
   left: 0;
 }
 
+/* Bootstrap icons on the nav */
 .nav i{
   color: #836B4F;
 }
@@ -89,6 +88,7 @@ main {
 }
 
 
+/* Hero (top) section */
 .hero {
   display: grid;
   position: relative;
@@ -104,7 +104,6 @@ main {
   justify-content: center;
   padding: 4rem;
 }
-
 
 .hero-text h2 {
   font-size: clamp(1.8rem, 4vw, 2.2rem);
@@ -128,12 +127,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/img/sketchbook-sm.jpg");
+    background-image: url("/img/sketch-updated.jpg");
     background-size: cover;
     background-position: 45% center;
 }
 
 
+/* About Me Section */
 .about {
   display: grid;
   grid-template-columns: 1.86fr 1fr;  /* roughly 65/35 ratio */
@@ -157,7 +157,6 @@ main {
   font-weight: 600;
   color: #5F5E62;
   line-height: 1.45;
-
   padding-left: 1.25rem;
   border-left: 4px solid rgba(0,0,0,0.1);
 }
@@ -187,10 +186,10 @@ main {
   font-weight: 600;
   color: #5F5E62;
   line-height: 1.45;
-
   padding-left: 1.25rem;
 }
 
+/* About section bottom row */
 .cards {
   grid-column: 1 / -1;  /* span full width */
   display: flex;
@@ -207,12 +206,10 @@ main {
   align-items: center;
   text-align: center;
   padding: 1.5rem;
-  background-color: #Fff;
+  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-
-
 
 .card i {
   font-size: 2rem;
@@ -226,11 +223,10 @@ main {
 }
 
 .resume-section {
-  grid-column: 1 / -1;  /* span full width of parent grid */
+  grid-column: 1 / -1;  /* span full width of grid */
   grid-row: 4;
-  
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* 👈 50/50 split */
+  grid-template-columns: 1fr 1fr;  /* 50/50 split */
   gap: 4rem;
   background-color: #fff;
   padding: 1rem;
@@ -244,7 +240,7 @@ main {
   margin-right: 0.75rem;
 }
 
-/* Skills list styling */
+/* Skills list styling w/ separator */
 .skill-category {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
@@ -300,7 +296,6 @@ main {
   font-size: 0.95rem;
 }
 
-
 .portfolio {
   padding: 2rem;
 }
@@ -324,19 +319,12 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* .project-head{
-  display: flex;
-  justify-content: center;
-} */
-
 .project-card h3 {
   margin: 0;
   line-height: 1.25;
   text-align: center;
   overflow: hidden;
 }
-
-
 
 .project-card figure {
   margin: 0;
@@ -357,7 +345,6 @@ main {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-
 .project-links {
   margin-top: auto;
   display: flex;
@@ -366,9 +353,6 @@ main {
   padding-top: 0.75rem;
   border-top: 1px solid rgba(0,0,0,0.05);
 }
-
-
-
 
 .project-links a {
   font-size: 0.85rem;
@@ -388,13 +372,13 @@ main {
 .contact-section {
     padding: 2rem 1rem;
     background: #F9F2D9;
-    background-image: url("/img/about.jpg");
-    background-size: cover;  /* Changed from 'fill' to 'cover' */
-    background-position: 75% 40%;
+    background-image: url("/img/doodle.jpg");
+    background-size: cover;
+    background-position: 78% 40%;
     opacity: 0.8;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 2px solid #F4E1B1;  /* Also fixed your border syntax */
+    border: 1px solid #F4E1B1;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
@@ -404,7 +388,6 @@ main {
 }
 
 .contact-section h2 {
-    /* font-size: 2.5rem; */
     margin-bottom: 10px;
     text-align: center;
 }
@@ -418,8 +401,6 @@ main {
   text-align: center;
   margin-bottom: 40px;
 }
-
-
 
 .contact-form {
     background: white;
@@ -485,7 +466,6 @@ main {
     box-shadow 0.15s ease;
 }
 
-
 .contact-form button:hover:not(:disabled) {
   background: #004f86; /* darker, same hue */
   transform: translateY(-1px);
@@ -529,11 +509,19 @@ main {
 }
 
 
+/*--------------------------------- */
+/* ---- Responsive Design ---- */
+/*--------------------------------- */
 
+/* Notes: No hamburger menu, nav looks good without */
 
-
-/* small screens */
 @media (max-width: 768px) {
+  /* Stack nav items if needed */
+  .nav {
+    gap: 1.5rem;
+    padding: 0.6rem 1rem;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
@@ -598,12 +586,6 @@ main {
     margin-bottom: 0.5rem;
   }
   
-  /* Stack nav items if needed */
-  .nav {
-    gap: 1.5rem;
-    padding: 0.6rem 1rem;
-  }
-  
   /* Hide background images on mobile */
   .hero::after,
   .about::after {
@@ -611,43 +593,33 @@ main {
   }
 }
 
-
-/* ---- Sections ---- */
-/* .section {
-  padding: 4rem 1.5rem;
-} */
-
-/* alternate subtle contrast */
-/* .section:nth-of-type(even) {
-  background: rgba(255, 255, 255, 0.6);
-} */
+/*--------------------------------- */
+/* Sections section */
+/*--------------------------------- */
 
 /* anchor offset */
 .section {
     scroll-margin-top: 8rem;
     background-repeat: no-repeat;
     border-radius: 1rem;
-    /* overflow: hidden; */
 }
 
-
+/* Space between sections */
 .section + .section {
   margin-top: 3rem;
 }
 
-
-
+/*--------------------------------- */
 /* ---- Typography ---- */
+/*--------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Fraunces", serif;
   color: #836B4F;
 }
 
-
 h1 {
   font-size: clamp(2.7rem, 7vw, 4rem);
   font-weight: 900;
-  /* font-style: italic; */
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
 }
@@ -672,8 +644,10 @@ p {
   color: #4b5563;
 }
 
-/* ---- Footer ---- */
 
+/*--------------------------------- */
+/* ---- Footer ---- */
+/*--------------------------------- */
 .site-footer {
     display: flex;
     justify-content: center;
@@ -687,8 +661,11 @@ p {
 }
 
 
-/* coffee ring */
+/*--------------------------------- */
+/* ---- Decorative elements ---- */
+/*--------------------------------- */
 
+/* coffee ring */
 .hero::after {
   content: "";
   position: absolute;
@@ -708,10 +685,11 @@ p {
 
   opacity: 0.5;
   pointer-events: none;
+  /* let it overlap content */
   z-index: 10;
 }
 
-
+/* purple smudge */
 .about::after {
   content: "";
   position: absolute;
@@ -727,19 +705,21 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   
-  opacity: 0.9;
+  opacity: 0.7;
   pointer-events: none;
   z-index: -1;
 }
 
-
+/* Icon in hero section */
 .book {
   width: 2rem;
   height: auto;
-
 }
 
 
+/*--------------------------------- */
+/* ---- Case study layout ---- */
+/*--------------------------------- */
 .case-layout {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
@@ -748,7 +728,6 @@ p {
   margin: 0 auto;
   padding: 3rem 2rem;
 }
-
 
 .case-article {
   background: #fff;
