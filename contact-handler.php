@@ -22,6 +22,42 @@ try {
     exit;
 }
 
+// Get the token from POST
+$recaptcha_token = $_POST['recaptcha_token'] ?? '';
+
+if (empty($recaptcha_token)) {
+    echo json_encode(['success' => false, 'message' => 'Security verification failed.']);
+    exit;
+}
+
+// Verify with Google/recaptcha
+$secret_key = $config['recaptcha']['secret_key'];
+$verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+
+$data = [
+    'secret' => $secret_key,
+    'response' => $recaptcha_token,
+    'remoteip' => $_SERVER['REMOTE_ADDR']
+];
+
+$options = [
+    'http' => [
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => http_build_query($data)
+    ]
+];
+
+$context = stream_context_create($options);
+$verify_response = file_get_contents($verify_url, false, $context);
+$response_data = json_decode($verify_response);
+
+// Check if verification was successful and score is acceptable
+if (!$response_data->success || $response_data->score < 0.5) {
+    echo json_encode(['success' => false, 'message' => 'Security verification failed. Please try again.']);
+    exit;
+}
+
 // Security: Only allow POST requests
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode(['success' => false, 'message' => 'Invalid request method']);

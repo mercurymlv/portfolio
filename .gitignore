@@ -17,4 +17,7 @@ temp/
 *.tmp
 
 # Color palettes
-Pantone*.png
+Pantone Connect Palette-extended.png
+
+# Re-usable case study template with sidebar
+template.php

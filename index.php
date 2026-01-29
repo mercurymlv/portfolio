@@ -221,7 +221,7 @@
   </section>
 </div>
 
-<!-- Script for form submission handling - using host SMTP -->
+<!-- Script for form submission handling - validating with recaptcha v3 and using host SMTP -->
 <script>
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -234,10 +234,14 @@
       btn.disabled = true;
       btn.textContent = 'Sending...';
       
-      // Prepare form data
-      const formData = new FormData(form);
-      
-      try {          
+      try {
+          // Get reCAPTCHA token
+          const token = await grecaptcha.execute('6Le4aVosAAAAAMZ5NUA-sprcJgi15d4YC7FK6Qwh', {action: 'submit'});
+          
+          // Prepare form data
+          const formData = new FormData(form);
+          formData.append('recaptcha_token', token);
+          
           const response = await fetch('contact-handler.php', {
               method: 'POST',
               body: formData
