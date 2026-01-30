@@ -1,7 +1,8 @@
 <?php
   $pageTitle = $pageTitle ?? 'Matthew Valdez – Portfolio';
   $pageDescription = $pageDescription ?? 'Data, supply chain, and analytics portfolio';
-// header.php
+  // index has anchors, subpages use full url
+  $base = isset($is_subpage) && $is_subpage ? 'https://portfolio.matthewvaldez.com/' : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   
   <link rel="stylesheet" href="/css/styles.css">
+  <!-- Only load the supplemental study.css for the subpages -->
+  <?php if (isset($is_subpage) && $is_subpage): ?>
+  <link rel="stylesheet" href="/css/study.css">
+  <?php endif; ?>
 
   <!-- favicon stuff -->
   <link rel="apple-touch-icon" sizes="180x180" href="/img/fav/apple-touch-icon.png">
@@ -30,19 +35,21 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/fav/favicon-16x16.png">
   <link rel="manifest" href="/img/fav/site.webmanifest">
 
-<!-- for recaptcha -->
+<!-- for recaptcha - only needed on index-->
+<?php if (isset($is_subpage) && $is_subpage): ?>
 <script src="https://www.google.com/recaptcha/api.js?render=6Le4aVosAAAAAMZ5NUA-sprcJgi15d4YC7FK6Qwh"></script>
+<?php endif; ?>
 
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav">
-    <a href="#home"><i class="bi bi-house-door"></i> Home</a>
-    <a href="#about"><i class="bi bi-file-earmark-person"></i> About</a>
-    <a href="#portfolio"><i class="bi bi-journal-check"></i> Portfolio</a>
-    <a href="#contact"><i class="bi bi-pencil"></i> Contact</a>
+    <a href="<?= $base ?>#home"><i class="bi bi-house-door"></i> Home</a>
+    <a href="<?= $base ?>#about"><i class="bi bi-file-earmark-person"></i> About</a>
+    <a href="<?= $base ?>#portfolio"><i class="bi bi-journal-check"></i> Portfolio</a>
+    <a href="<?= $base ?>#contact"><i class="bi bi-pencil"></i> Contact</a>
   </nav>
 </header>
 
-<main>
+

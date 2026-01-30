@@ -7,6 +7,7 @@
         'data visualization',
         'urban forestry',
         'public datasets',
+        'spatial analysis',
         'Tableau'
     ];
     include 'header.php'; 
@@ -18,23 +19,13 @@
     <article class="case-article">
       <header class="case-header">
         <h1>Seattle Tree Canopy Dashboard</h1>
-        <p class="meta categories">
-          <span>Public Datasets • </span>
-          <span>Data Visualization • </span>
-          <span>Tableau • </span>
-          <span>Urban Forestry</span>
-        </p>
-        <p class="byline">
-          <span class="author fw-bold">Matthew Valdez</span> / 
-          <time datetime="2024-06-24" class="fw-bold">June 24, 2024</time>
-        </p>
-        <p class="case-lead-img">
-          <img src="/img/pexels-photo-4424285-4424285-1024x682.jpg">
+
+        <p class="case-meta">
+          Public Data • Tableau • Spatial Analysis
         </p>
       </header>
 
       <section class="case-content">
-
         <p>Intro paragraph setting context...</p>
 
         <figure>
@@ -55,14 +46,12 @@
     </article>
 
     <aside class="case-sidebar">
-      <div class="sidebar-box">
-        <h3>Other Articles</h3>
-        <nav class="sidebar-links">
-          <a href="#">Inventory Forecast Dashboard</a>
-          <a href="#">Distribution Network Analysis</a>
-          <a href="#">ERP Data Migration</a>
-        </nav>
-      </div>
+      <h3>Related Case Studies</h3>
+      <ul>
+        <li><a href="#">Inventory Forecast Dashboard</a></li>
+        <li><a href="#">Distribution Network Analysis</a></li>
+        <li><a href="#">ERP Data Migration</a></li>
+      </ul>
     </aside>
 
   </div>

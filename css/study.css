@@ -1,0 +1,118 @@
+/*--------------------------------- */
+/* ---- Case study layout ---- */
+/*--------------------------------- */
+
+/* ---- Main content ---- */
+/* The articles should be wider than the main site */
+main {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.case-study {
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.case-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+}
+
+.case-header p {
+    text-align: center; /* Explicitly center text inside header paragraphs */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  gap: 1rem;
+  width:100%;
+  min-width: 800px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 0rem;
+}
+
+.case-content p {
+    text-align: justify; /* If you want justified body text */
+}
+
+.case-layout h1{
+  font-size: clamp(2.5rem, 3vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.case-article {
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.case-lead-img{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto;
+}
+
+.case-lead-img img{
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+}
+
+.case-sidebar {
+  font-size: 0.9rem;
+  font-family: var(--body-font); 
+  align-self: start;
+  border-left: none;
+  padding: 0;
+  background: transparent;
+  padding-top: 0.5rem;
+}
+
+.sidebar-box {
+  /* background: #fcfcfc; */
+  padding: 1.5rem 1.75rem;
+  border-left: 1px solid rgba(0,0,0,0.08);
+  box-shadow: none;
+  width: 100%;
+  max-width: 320px; /* optional but very NYT */
+  background: linear-gradient(#fcfcfc, #fafafa);
+}
+
+.case-sidebar h3 {
+  font-family: serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* letter-spacing: -0.12em; */
+  /* text-transform: uppercase; */
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.sidebar-links {
+  padding: 0;
+  border-top: none;
+}
+
+.sidebar-links a {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #222;
+  text-decoration: none;
+  padding: 0.4rem 0;
+}
+
+.sidebar-links a:hover {
+  color: #000;
+  text-decoration: underline;
+}

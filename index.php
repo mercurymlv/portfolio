@@ -1,6 +1,7 @@
 <?php include 'header.php';?>
 
 
+<main>
 <div class="page-surface">
   <!-------------------------------->
   <!-- Intro Section -->
@@ -224,6 +225,7 @@
   </section>
 </div>
 
+
 <!-- Script for form submission handling - validating with recaptcha v3 and using host SMTP -->
 <script>
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
@@ -278,5 +280,5 @@
   });
 </script>
 
-
+</main>
 <?php include 'footer.php'; ?>
