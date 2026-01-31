@@ -148,7 +148,7 @@
           Analysis of Seattle City Tree Canopy data.
         </p>
         <div class="project-links">
-          <a href="/projects/seattle-trees.html">Case Study</a>
+          <a href="seattle-trees.php">Case Study</a>
           <a href="https://public.tableau.com/app/profile/matthew.valdez/viz/Seattle_Tree_Canopy/SeattleTreeCanopyDashboard" target="_blank">Tableau <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </article>
@@ -162,7 +162,7 @@
           A fun trivia game to test your general knowledge.
         </p>
         <div class="project-links">
-          <a href="/projects/trivia-game.html">Case Study</a>
+          <a href="trivia-game.php">Case Study</a>
           <a href="https://mlv888.pythonanywhere.com/" target="_blank">Play Game <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </article>
@@ -176,7 +176,7 @@
           A personal finance stock screener tool tailored to my investment strategy.
         </p>
         <div class="project-links">
-          <a href="/projects/stock-screener.html">Case Study</a>
+          <a href="stock-screener.php">Case Study</a>
           <a href="https://www.matthewvaldez.com/stocks/" target="_blank">Open <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </article>
