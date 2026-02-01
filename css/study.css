@@ -15,20 +15,6 @@ main {
     padding: 2rem;
 }
 
-.case-header {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 1rem auto;
-}
-
-.case-header p {
-    text-align: center; /* Explicitly center text inside header paragraphs */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
 .case-layout {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
@@ -38,10 +24,6 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 3rem 0rem;
-}
-
-.case-content p {
-    text-align: justify; /* If you want justified body text */
 }
 
 .case-layout h1{
@@ -56,6 +38,25 @@ main {
     border-radius: 16px;
     padding: 3rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.case-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 1rem auto;
+}
+
+.case-header p {
+    text-align: center; /* Explicitly center text inside header paragraphs */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-header .description {
+  font-style: italic;
+  text-align: left;
+  max-width: 600px; 
+  margin: 1rem auto;
 }
 
 .case-lead-img{
@@ -73,7 +74,7 @@ main {
 
 .case-lead-img figcaption {
     width: 80%; /* Match the image width */
-    max-width: 900px;
+    max-width: 75ch;
     margin-top: 0.5rem;
     font-size: 0.9rem;
     color: #666;
@@ -82,12 +83,28 @@ main {
     padding-left: 1rem;
 }
 
-.case-header .description {
-  font-style: italic;
-  text-align: left;
-  max-width: 600px; 
-  margin: 1rem auto 0 auto;
+
+.case-content {
+    text-align: left;
+    max-width: 70ch;
+    margin: 0 auto 1rem auto;
 }
+
+.case-content p {
+    text-align: justify;
+    margin: 0 auto 1rem auto;
+    max-width: 900px; /* Match .case-content */
+    width: 100%; /* Take full width of parent */
+}
+
+.case-content ul {
+  margin-bottom: 1rem;
+}
+
+.case-study a {
+  text-decoration: none;
+}
+
 
 .case-sidebar {
   font-size: 0.9rem;
@@ -136,4 +153,42 @@ main {
 .sidebar-links a:hover {
   color: #000;
   text-decoration: underline;
+}
+
+
+
+/*--------------------------------- */
+/* ---- Responsive Design ---- */
+/*--------------------------------- */
+
+@media (max-width: 768px) {
+
+  .case-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pull-quote {
+  font-size: 2rem;
+  font-style: italic;
+  color: #666;
+  border-left: 6px solid #787878;
+  padding-left: 1.5rem;
+  margin: 3rem 0;
+}
+
+.pull-quote .bi-quote {
+  font-size: 3rem;
+  color: #bbb;
+  display: block;
+  /* margin-bottom: 0.5rem; */
+}
+
+
+.pull-quote p {
+  margin: 0;
+  font-size: 2rem;
+  color: #666;
+  max-width: none;
+  line-height: 1.3;
 }

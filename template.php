@@ -2,7 +2,7 @@
     // Tag the page as a sub-page, not index, for nav links
     $is_subpage = true;
     $pageTitle = 'Matthew Valdez - Tree Canopy';
-    $pageDescription = 'An interactive dashboard analyzing Seattle’s urban tree canopy';
+    $pageDescription = 'A comparison of Seattle tree canopy percentage change from 2016 to 2020 with a look at demographics from the US Census.';
     $topics = [
         'data visualization',
         'urban forestry',
@@ -32,11 +32,12 @@
           <img src="/img/pexels-photo-4424285-4424285-1024x682.jpg" alt="View of Seattle Space Needle through trees">
           <figcaption>Space Needle through tree canopy.</figcaption>
         </figure>
+        <p class="description"><?php echo $pageDescription; ?></p>
       </header>
 
       <section class="case-content">
 
-        <p>Intro paragraph setting context...</p>
+        
 
         <figure>
           <img src="..." alt="">

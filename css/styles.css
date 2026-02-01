@@ -606,6 +606,8 @@ main {
   .job-meta {
     margin-bottom: 0.5rem;
   }
+
+
   
   /* Hide background images on mobile */
   .hero::after,
@@ -613,6 +615,7 @@ main {
     display: none;
   }
 }
+
 
 /*--------------------------------- */
 /* Sections section */
@@ -737,4 +740,13 @@ p {
   height: auto;
 }
 
+
+.term {
+  font-weight: 700;
+  color: #787878;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
 
