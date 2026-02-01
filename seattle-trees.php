@@ -100,9 +100,9 @@
         </figure>
 
         <h3>Canopy and Race</h3>
-        <p>Linking the US Census data with tree canopy data allows us to explore trends across demographic groups. One key measure is the “Percent People of Color” for each census tract.</p>
-        <p>Research shows that communities with higher percentages of people of color tend to have lower tree canopy coverage. Nationally, the gap is roughly 33% less canopy compared to majority-white areas<sup><a href="#ref-4">4</a></sup>. This environmental disparity can have significant effects on health and quality of life.</p>
-        <p>In Seattle, we plotted the percentage of people of color against tree canopy coverage using a scatterplot. The graph shows a clear downward trend: as the proportion of non-white residents increases, canopy coverage tends to decrease, consistent with national patterns. A linear regression line fitted to the data produces a P-value of 0.003, indicating a statistically significant relationship between these variables.</p>
+        <p>Linking US Census data with tree canopy data allows us to explore how canopy coverage varies across demographic groups. One key measure in the census is the percentage of people of color within each census tract.</p>
+        <p>Previous research has shown that communities with higher percentages of people of color tend to have significantly lower tree canopy coverage. Nationally, this gap amounts to roughly 33% less canopy compared to majority-white areas<sup><a href="#ref-4">4</a></sup>. These disparities in environmental conditions can have meaningful consequences for health, comfort, and overall quality of life.</p>
+        <p>In Seattle, we examined this relationship by plotting the percentage of people of color against tree canopy coverage at the census-tract level. The scatterplot reveals a clear downward trend: as the proportion of non-white residents increases, average canopy coverage tends to decrease, consistent with national patterns. A linear regression fitted to the data confirms that this relationship is statistically significant (p < 0.01), though it explains only a modest portion of the overall variation (R² ≈ 0.06), suggesting that many other factors also shape canopy distribution across the city.</p>
         <figure class="case-lead-img">
           <img src="/img/scatter-race.png" alt="Scatterplot comparing race and tree canopy coverage">
           <figcaption>Scatterplot showing tree canopy coverage vs. percent people of color by census tract, with linear regression line.</figcaption>
@@ -167,16 +167,25 @@
     </article>
 
     <aside class="case-sidebar">
+
       <div class="sidebar-box">
-        <h3>Other Articles</h3>
+        <h3>Related Case Studies</h3>
         <nav class="sidebar-links">
-          <a href="#">Inventory Forecast Dashboard</a>
-          <a href="#">Distribution Network Analysis</a>
-          <a href="#">ERP Data Migration</a>
-          https://data.seattle.gov/
-          https://data.seattle.gov/dataset/Seattle-Tree-Canopy-2016-2021-Block-Groups/az78-wea3/about_data
+          <a href="trivia.php">Trivia Game With Flask</a>
+          <a href="stocks.php">Personal Stock Screener</a>
+          <a href="db-norm.php">Database Normalization</a>
         </nav>
       </div>
+
+      <div class="sidebar-box">
+        <h3>Data & Resources</h3>
+        <nav class="sidebar-links">
+          <a href="https://data.seattle.gov/" target="_blank">Seattle Open Data Portal</a>
+          <a href="https://data.seattle.gov/dataset/Seattle-Tree-Canopy-2016-2021-Block-Groups/az78-wea3/about_data" target="_blank">Tree Canopy Dataset</a>
+          <a href="https://www.census.gov/programs-surveys/acs" target="_blank">US Census / ACS</a>
+        </nav>
+      </div>
+
     </aside>
 
   </div>

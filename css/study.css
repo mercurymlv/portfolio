@@ -163,9 +163,21 @@ main {
 
 @media (max-width: 768px) {
 
-  .case-layout {
+  /* .case-layout {
     grid-template-columns: 1fr;
-  }
+  } */
+  
+.case-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 }
 
 .pull-quote {
@@ -192,3 +204,4 @@ main {
   max-width: none;
   line-height: 1.3;
 }
+
