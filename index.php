@@ -24,7 +24,7 @@
     <div class="about-intro">
       <h2>About Me</h2>
       <p class="about-subtitle">
-        I am a data analyst based in Seattle and San Francisco, working at the intersection of supply chain operations, data analysis, and reporting.
+        I am an analyst based in Seattle and San Francisco, working at the intersection of supply chain operations, data analysis, and reporting.
       </p>
     </div>
 

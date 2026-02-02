@@ -155,31 +155,6 @@ main {
   text-decoration: underline;
 }
 
-
-
-/*--------------------------------- */
-/* ---- Responsive Design ---- */
-/*--------------------------------- */
-
-@media (max-width: 768px) {
-
-  /* .case-layout {
-    grid-template-columns: 1fr;
-  } */
-  
-.case-layout {
-  display: flex;
-  flex-direction: column;
-}
-
-.case-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-}
-
 .pull-quote {
   font-size: 2rem;
   font-style: italic;
@@ -205,3 +180,140 @@ main {
   line-height: 1.3;
 }
 
+
+/*--------------------------------- */
+/* ---- Lightbox Stuff (view larger images) ---- */
+/*--------------------------------- */
+
+.clickable-image {
+  cursor: zoom-in;
+  transition: opacity 0.2s ease;
+}
+
+.clickable-image:hover {
+  opacity: 0.9;
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: zoom-out;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  color: #ccc;
+}
+
+
+/*--------------------------------- */
+/* ---- Responsive Design ---- */
+/*--------------------------------- */
+
+@media (max-width: 768px) {
+
+  main {
+    width: 100%;
+    padding: 0;
+  }
+
+  .case-study {
+    padding: 1rem;
+  }
+
+  .case-layout {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;  /* Remove the 800px minimum */
+    max-width: 100%;
+    padding: 1rem 0;
+    gap: 0;
+  }
+
+    .case-article {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .case-header {
+    max-width: 100%;
+  }
+
+  .case-lead-img img {
+    width: 100%;  /* Full width on mobile instead of 80% */
+  }
+
+  .case-lead-img figcaption {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .case-content {
+    max-width: 100%;
+  }
+
+  .case-content p {
+    text-align: left;  /* Switch from justify to left on mobile */
+    max-width: 100%;
+  }
+
+  .pull-quote {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    padding-left: 1rem;
+  }
+
+  .pull-quote p {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-box {
+    max-width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .case-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
+    padding: 0 auto;
+    margin: 1rem auto;
+  }
+}

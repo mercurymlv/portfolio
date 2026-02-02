@@ -36,7 +36,7 @@
   <link rel="manifest" href="/img/fav/site.webmanifest">
 
 <!-- for recaptcha - only needed on index-->
-<?php if (isset($is_subpage) && $is_subpage): ?>
+<?php if (!isset($is_subpage) || !$is_subpage): ?>
 <script src="https://www.google.com/recaptcha/api.js?render=6Le4aVosAAAAAMZ5NUA-sprcJgi15d4YC7FK6Qwh"></script>
 <?php endif; ?>
 

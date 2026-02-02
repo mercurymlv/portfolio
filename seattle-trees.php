@@ -75,7 +75,10 @@
         <p>I downloaded the tree canopy data as an Excel file and joined it with a KML file (a format used for mapping geographic data) of Seattle. The data is organized by census tract, which provides a more detailed view than neighborhoods or ZIP codes and aligns neatly with supporting Census data. I combined, analyzed, and visualized the dataset using Tableau.</p>
         <p>In Tableau, I created a dashboard highlighting areas of interest. During validation, I discovered that census tract 246 was missing key data points, so it is excluded from certain views to ensure the accuracy and reliability of the analysis.</p>
         <figure class="case-lead-img">
-          <img src="/img/Seattle-Tree-Canopy-Dashboard-1024x791.png" alt="Screenshot of Tableau Dashboard">
+          <img src="/img/canopy-dashboard.png" 
+              alt="Screenshot of Tableau Dashboard"
+              class="clickable-image"
+              data-fullsize="/img/canopy-dashboard.png">
           <figcaption>Tree Canopy Dashboard - <a href="https://public.tableau.com/app/profile/matthew.valdez/viz/Seattle_Tree_Canopy/SeattleTreeCanopyDashboard" target="_blank">Explore the dashboard in Tableau <i class="bi bi-box-arrow-up-right"></i></a></figcaption>
         </figure>
 
@@ -84,7 +87,10 @@
         <p>The color distribution matches expectations: the downtown core and industrial districts south of downtown appear deep red, reflecting sparse tree coverage. In contrast, neighborhoods with large parks, such as Discovery Park, Seward Park, and the Washington Park Arboretum, are bright green, highlighting dense canopy areas.</p>
         <p>This map not only illustrates the current state of the city’s canopy but also sets the stage for analyzing how these patterns relate to demographics and changes over time.</p>
         <figure class="case-lead-img">
-          <img src="/img/2021-tree-canopy.png" alt="Seattle Tree canopy color-coded map">
+          <img src="/img/canopy-2021.png" 
+              alt="Seattle Tree canopy color-coded map"
+              class="clickable-image"
+              data-fullsize="/img/canopy-2021.png">
           <figcaption>Screenshot of Seattle’s 2021 tree canopy by census tract.</figcaption>
         </figure>
 
@@ -93,9 +99,11 @@
         <p>The color scale is designed so that zero or minimal change appears white, while gains are green and losses are red. This makes increases and decreases immediately visible across the city.</p>
         <p>Our goal is to highlight which areas are gaining or losing canopy and to track these changes alongside demographic patterns, which we explore in the following sections.</p>
         <p>A quick glance at the map reveals a notable trend: more red than green overall. This shows a general decline in tree coverage, with Seattle losing roughly 0.4% of its canopy — about 250 acres — during this period.</p>
-        change-tree-canopy-1024x867.png
         <figure class="case-lead-img">
-          <img src="/img/change-tree-canopy-1024x867.png" alt="Seattle Tree canopy color-coded map by percent change">
+          <img src="/img/canopy-change.png" 
+              alt="Seattle Tree canopy color-coded map by percent change"
+              class="clickable-image"
+              data-fullsize="/img/canopy-change.png">
           <figcaption>Screenshot of canopy change by census tract, 2016–2021.</figcaption>
         </figure>
 
@@ -104,7 +112,10 @@
         <p>Previous research has shown that communities with higher percentages of people of color tend to have significantly lower tree canopy coverage. Nationally, this gap amounts to roughly 33% less canopy compared to majority-white areas<sup><a href="#ref-4">4</a></sup>. These disparities in environmental conditions can have meaningful consequences for health, comfort, and overall quality of life.</p>
         <p>In Seattle, we examined this relationship by plotting the percentage of people of color against tree canopy coverage at the census-tract level. The scatterplot reveals a clear downward trend: as the proportion of non-white residents increases, average canopy coverage tends to decrease, consistent with national patterns. A linear regression fitted to the data confirms that this relationship is statistically significant (p < 0.01), though it explains only a modest portion of the overall variation (R² ≈ 0.06), suggesting that many other factors also shape canopy distribution across the city.</p>
         <figure class="case-lead-img">
-          <img src="/img/scatter-race.png" alt="Scatterplot comparing race and tree canopy coverage">
+          <img src="/img/canopy-race.png" 
+              alt="Scatterplot comparing race and tree canopy coverage"
+              class="clickable-image"
+              data-fullsize="/img/canopy-race.png">
           <figcaption>Scatterplot showing tree canopy coverage vs. percent people of color by census tract, with linear regression line.</figcaption>
         </figure>
 
@@ -114,7 +125,10 @@
         <p>The bar chart below shows a clear trend: as tree canopy percentage increases, overall health indicators improve. A mean line added to the chart highlights the general upward pattern across the population.</p>
         <p>While many factors influence health, and we cannot claim a direct causal relationship, the data aligns with expectations — higher tree canopy coverage tends to coincide with better health outcomes. This trend underscores the importance of urban green spaces for community well-being.</p>
         <figure class="case-lead-img">
-          <img src="/img/bar-health.png" alt="Bar Chart comparing health (groups) and tree canopy coverage">
+          <img src="/img/canopy-health.png" 
+              alt="Bar Chart comparing health (groups) and tree canopy coverage"
+              class="clickable-image"
+              data-fullsize="/img/canopy-health.png">
           <figcaption>Bar chart showing population health by tree canopy percentage, with mean line.</figcaption>
         </figure>
 
@@ -190,5 +204,47 @@
 
   </div>
 </main>
+
+<!-- Script for the lightbox (image zoom) functionality -->
+<script>
+// Create lightbox on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Create lightbox HTML
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+
+  // Add click handlers to all clickable images
+  document.querySelectorAll('.clickable-image').forEach(img => {
+    img.addEventListener('click', function() {
+      const fullsizeSrc = this.getAttribute('data-fullsize') || this.src;
+      lightboxImg.src = fullsizeSrc;
+      lightboxImg.alt = this.alt;
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Close lightbox when clicking background or close button
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox || e.target === closeBtn) {
+      lightbox.classList.remove('active');
+    }
+  });
+
+  // Close with ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+    }
+  });
+});
+</script>
 
 <?php include 'footer.php'; ?>
